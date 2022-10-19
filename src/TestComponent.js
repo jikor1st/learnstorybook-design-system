@@ -14,6 +14,7 @@ const Container = styled.button`
   font-size: 20px;
   font-weight: bold;
   cursor: pointer;
+  /* border: 2px solid #ff0000; delete border */
 `;
 
 // TestComponent.propTypes = {
