@@ -1,6 +1,11 @@
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
+/**
+ * - 테스트 컴포넌트
+ * @param {*} param0
+ * @returns
+ */
 export function TestComponent({ test, ...props }) {
   return <Container {...props}>{test}</Container>;
 }
