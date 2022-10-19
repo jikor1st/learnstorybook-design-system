@@ -27,6 +27,21 @@ export const TestComponents = () => {
   );
 };
 
+export const TestUpdateComponents = () => {
+  return (
+    <div>
+      <TestComponent
+        test="updateComponent"
+        testBoolean
+        onClick={() => {
+          console.log("test");
+        }}
+      />
+      <TestComponent test="test1" />
+    </div>
+  );
+};
+
 export const TestComponentsProps = Template.bind({});
 TestComponentsProps.args = {
   test: "testComponentProps",
