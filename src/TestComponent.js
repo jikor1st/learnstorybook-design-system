@@ -12,6 +12,7 @@ const Container = styled.button`
   padding: 10px 16px;
   border-radius: 32px;
   font-size: 20px;
+  font-weight: bold;
   cursor: pointer;
 `;
 
