@@ -81,8 +81,33 @@ module.exports = {
 
 ## 스토리북 퍼블리싱하기
 
-설치
+- 설치
 
 ```bash
 npm install --save-dev chromatic
 ```
+
+- 스토리북 빌드 후 배포
+
+```bash
+npx chromatic --project-token=<project-token>
+```
+
+- 확인
+
+  https://634f57a42d5f5130eba011a8-soyxezqcer.chromatic.com/?path=/story/example-introduction--page
+
+## 지속적 통합 (CI)
+
+지속적 통합 (CI)은 현대 웹 앱을 관리하기 위한 실질적인 수단
+
+코드를 push할 때 테스트, 분석, 배포와 같은 행동을 제어할 수 있게함
+
+### GitHub Actions 사용
+
+1. 디렉토리 최상위에 .github 디렉토리를 추가합니다.
+2. 그 안에 workflows라는 디렉토리를 만듭니다.
+3. chromatic.yml 이라는 파일을 생성합니다.
+
+- 이는 CI 프로세스가 작동되도록 지시하게 만들어줍니다.
+- 작은 것부터 시작하고. 점차 발전시켜 나갑니다.
