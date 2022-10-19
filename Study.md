@@ -111,3 +111,58 @@ npx chromatic --project-token=<project-token>
 
 - 이는 CI 프로세스가 작동되도록 지시하게 만들어줍니다.
 - 작은 것부터 시작하고. 점차 발전시켜 나갑니다.
+
+```yml
+# .github/workflows/chromatic.yml
+
+# Name of our action
+name: "Chromatic"
+# The event that will trigger the action
+on: push
+
+# What the action will do
+jobs:
+  test:
+    # The operating system it will run on
+    runs-on: ubuntu-latest
+    # The list of steps that the action will go through
+    steps:
+      - uses: actions/checkout@v1
+      - run: yarn
+        #👇 Adds Chromatic as a step in the workflow
+      - uses: chromaui/action@v1
+        # Options required for Chromatic's GitHub Action
+        with:
+          #👇 Chromatic projectToken, see https://storybook.js.org/tutorials/design-systems-for-developers/react/en/review/ to obtain it
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+```
+
+그 이후 add, commit, push 플로우는 같습니다.
+
+```bash
+git add .
+
+git commit -m "commit message"
+
+git push origin main
+```
+
+## 팀에게 비주얼 리뷰 요청하기
+
+새로운 브랜치에 UI 변경 후 비주얼 리뷰 과정
+
+- 브랜치 생성 후 이동
+
+```bash
+git checkout -b improve-button
+```
+
+- UI 수정 또는 변경
+
+- 변동사항 commit, push
+
+```bash
+git commit -am "make Button pop"
+git push -u origin improve-button
+```
