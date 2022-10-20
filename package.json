@@ -1,6 +1,6 @@
 {
   "name": "@jigi-station/learnstorybook-design-system",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
@@ -21,7 +21,8 @@
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "build-storybook-docs": "build-storybook  --docs",
-    "chromatic": "npx chromatic --project-token=d288423dd048"
+    "chromatic": "npx chromatic --project-token=d288423dd048",
+    "release": "auto shipit --base-branch=main"
   },
   "eslintConfig": {
     "extends": [
